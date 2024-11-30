@@ -6,7 +6,7 @@ async function historiesHandler(request, h) {
       projectId: process.env.PROJECT_ID,
       keyFilename: process.env.PATH_SERVICE_KEY,
     });
-    const predictCollection = await db.collection("prediction").get();
+    const predictCollection = await db.collection("predictions").get();
     let histories = [];
     predictCollection.forEach((doc) => {
       histories.push(doc.data());

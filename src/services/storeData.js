@@ -6,7 +6,7 @@ async function storeData(id, data) {
     keyFilename: process.env.PATH_SERVICE_KEY,
   });
 
-  const predictCollection = db.collection("prediction");
+  const predictCollection = db.collection("predictions");
   return predictCollection.doc(id).set(data);
 }
 
