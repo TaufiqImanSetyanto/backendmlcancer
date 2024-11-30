@@ -7,7 +7,7 @@ const ClientError = require("./exceptions/error");
 (async () => {
   const server = Hapi.server({
     port: 8080,
-    host: "localhost",
+    host: process.env.PROD ? "0.0.0.0" : "localhost",
     routes: {
       cors: {
         origin: ["*"],
